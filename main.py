@@ -13,7 +13,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pymongo import MongoClient
 
-mongo_url = "mongodb+srv://rifaiiaya202:Ayarifaii@cluster0.edtrdfl.mongodb.net/test"
+mongo_url = "mongodb+srv://your link mongo"
 client = MongoClient(mongo_url)
 db = client['hotel']
 collection = db['conversation']
