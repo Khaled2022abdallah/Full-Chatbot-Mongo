@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pymongo import MongoClient
 from date import is_room_available
 
-mongo_url = "mongodb+srv://rifaiiaya202:Ayarifaii@cluster0.edtrdfl.mongodb.net/test"
+mongo_url = "mongodb+srv://ypur url mongo"
 client = MongoClient(mongo_url)
 db = client['hotel']
 collection = db['conversation']

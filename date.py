@@ -4,7 +4,7 @@ from pymongo import MongoClient
 
 def is_room_available(room_type, check_in_date, check_out_date):
     # Connect to MongoDB
-    client = MongoClient("mongodb+srv://rifaiiaya202:Ayarifaii@cluster0.edtrdfl.mongodb.net/test")
+    client = MongoClient("mongodb+srv:your url mongo")
     db = client["hotel"]
     collection = db["book"]
 
