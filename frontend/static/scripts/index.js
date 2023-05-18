@@ -143,3 +143,30 @@ $("#textInput").keypress(function (e) {
     getResponse();
   }
 });
+
+
+
+function checkRoomAvailability(userText) {
+  return getHardResponse(userText)
+    .then((cleanedAnswer) => {
+      const roomAvailable = cleanedAnswer === "true";
+      let botHtml = '<p class="botText"><span>';
+
+      if (roomAvailable) {
+        botHtml += "This room is available.";
+      } else {
+        botHtml += "This room is not available.";
+      }
+
+      botHtml += "</span></p>";
+      $("#chatbox").append(botHtml);
+      document.getElementById("chat-bar-bottom").scrollIntoView(true);
+
+      return roomAvailable;
+    })
+    .catch((error) => {
+      console.error(error);
+      return false;
+    });
+}
+

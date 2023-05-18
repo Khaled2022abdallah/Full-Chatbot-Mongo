@@ -12,8 +12,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pymongo import MongoClient
+from date import is_room_available
 
-mongo_url = "mongodb+srv://your link mongo"
+mongo_url = "mongodb+srv://rifaiiaya202:Ayarifaii@cluster0.edtrdfl.mongodb.net/test"
 client = MongoClient(mongo_url)
 db = client['hotel']
 collection = db['conversation']
@@ -110,3 +111,11 @@ app.add_middleware(
 @app.get("/{question}")
 async def create_item(question: str):
     return test(question)
+
+
+@app.get("/room/{room_type}/{check_in_date}/{check_out_date}")
+async def check_room_availability(room_type: str, check_in_date: str, check_out_date: str):
+    return is_room_available(room_type, check_in_date, check_out_date)
+
+
+

@@ -71,6 +71,20 @@
               <div id="chat-bar-bottom">
                 <p></p>
               </div>
+
+              <!-- Room availability input -->
+              <div class="room-availability-input">
+                <div>
+                  <label for="checkInDate">Check-in Date:</label>
+                  <input type="date" id="checkInDate" />
+                </div>
+                <div>
+                  <label for="checkOutDate">Check-out Date:</label>
+                  <input type="date" id="checkOutDate" />
+                </div>
+                <button onclick="checkRoomAvailability()">Check Availability</button>
+                <p id="availabilityResult"></p>
+              </div>
             </div>
           </div>
         </div>
